@@ -1,20 +1,23 @@
-import "./App.css";
-import CompoA from "./CompoA";
-import React, { useState } from "react";
-import { userCount } from "./Context";
+import React from 'react';
+import AddUser from './components/AddUser';
+import EditUser from './components/EditUser';
+import Home from './components/Home';
+import {BrowserRouter as Router, Routes, Route} from 'react-router-dom';
 
-function App() {
-  const [count, setCount] = useState(10);
-  const value = {
-    count,
-    setCount
-  }
 
+const App = () => {
   return (
-    <userCount.Provider value={value}>
-      <CompoA />
-    </userCount.Provider>
-  );
+    <div style={{maxWidth: "30rem", margin: "4rem auto"}}>
+      <Router>
+        <Routes>
+          <Route exact path="/" element={<Home />} />
+          <Route path="/add" element={<AddUser />} />
+          <Route path="/edit/:id" element={<EditUser />} />
+        </Routes>
+      </Router>
+    </div>
+  )
 }
 
-export default App;
+export default App
+
