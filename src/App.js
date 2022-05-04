@@ -1,10 +1,10 @@
 import "./App.css";
 import CompoA from "./CompoA";
-import React, { useContext, useState } from "react";
+import React, { useState } from "react";
 import { userCount } from "./Context";
 
 function App() {
-  const [count, setCount] = useState(50);
+  const [count, setCount] = useState(10);
   const value = {
     count,
     setCount
